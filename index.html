@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>jQuery自作ツールチップのサンプル</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/jquery.tooltip.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>jQuery自作ツールチップのサンプル</h1>
+    <p>
+      <a href="#" class="my-tooltip" title="ツールチップです！">マウスを乗せるとツールチップ</a>が表示されます。<br />
+      こちらの<a href="#" class="my-tooltip" title="表示されましたか？">リンク</a>テキストも同様です。
+    </p>
+  </div>
+  
+  <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.tooltip.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    $(".my-tooltip").tooltip({
+      direction: "top"
+    });
+  });
+  </script>
+</body>
+</html>

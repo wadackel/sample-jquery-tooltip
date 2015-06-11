@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/* ツールチップ本体 */
+.tooltip {
+  position:absolute;
+  z-index:9999;
+  display:block;
+  color:#fff;
+  font-size:14px;
+  line-height:1.2;
+}
+
+/* ツールチップの内容 */
+.tooltip__body {
+  position:relative;
+  padding:10px;
+  background:#222;
+  -webkit-border-radius:3px;
+     -moz-border-radius:3px;
+      -ms-border-radius:3px;
+          border-radius:3px;
+  -webkit-box-shadow:0 2px 4px rgba(0, 0, 0, .4);
+     -moz-box-shadow:0 2px 4px rgba(0, 0, 0, .4);
+      -ms-box-shadow:0 2px 4px rgba(0, 0, 0, .4);
+          box-shadow:0 2px 4px rgba(0, 0, 0, .4);
+}
+
+/* 方向によって位置を微調整する */
+.tooltip--top .tooltip__body {
+  top:-15px;
+}
+
+.tooltip--right .tooltip__body {
+  right:-5px;
+}
+
+.tooltip--bottom .tooltip__body {
+  bottom:-15px;
+}
+
+.tooltip--left .tooltip__body {
+  left:-5px;
+}
+
+/* ツールチップらしく矢印をつける */
+.tooltip__body:after {
+  content:"";
+  position:absolute;
+  display:block;
+  width:0;
+  height:0;
+  border-width:5px;
+  border-style:solid;
+  border-color:#222;
+}
+
+/* 表示方向によって、矢印の方向と位置を調整 */
+.tooltip--top .tooltip__body:after,
+.tooltip--bottom .tooltip__body:after {
+  left:50%;
+  margin-left:-5px;
+  border-right-color:transparent;
+  border-left-color:transparent;
+}
+
+.tooltip--right .tooltip__body:after,
+.tooltip--left .tooltip__body:after {
+  top:50%;
+  margin-top:-5px;
+  border-top-color:transparent;
+  border-bottom-color:transparent;
+}
+
+.tooltip--top .tooltip__body:after {
+  bottom:-5px;
+  border-bottom-width:0;
+  border-bottom-color:transparent;
+}
+
+.tooltip--bottom .tooltip__body:after {
+  top:-5px;
+  border-top-width:0;
+  border-top-color:transparent;
+}
+
+.tooltip--right .tooltip__body:after {
+  left:-5px;
+  border-left-width:0;
+  border-left-color:transparent;
+}
+
+.tooltip--left .tooltip__body:after {
+  right:-5px;
+  border-right-width:0;
+  border-right-color:transparent;
+}
