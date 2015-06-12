@@ -52,7 +52,7 @@
   // jQueryに "tooltip" というプラグインを登録する
   $.fn.tooltip = function(options){
     var $body = $("body");
-    var _options = $.extend({}, defaults, options);
+    var _options = $.extend(true, {}, defaults, options);
 
     // 実行したセレクタ(要素)全てに処理を行う
     // 要素自体を "return" することで、メソッドチェーンを可能にする
